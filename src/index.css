@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+.white {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(238deg)
+    brightness(111%) contrast(101%);
+}
+
+.bg {
+  background-image: url('./assets/bgs/sm-bg-anime.jpg');
+  background-size: cover;
+}
+
+.cloudy {
+  background: url('./assets/bgs/sm-cloudy.jpeg');
+  background-size: cover;
+}
+
+.rainy {
+  background: url('./assets/bgs/sm-rainy.webp');
+  background-size: cover;
+}
+
+.sunny {
+  background: url('./assets/bgs/sm-sunny.jpg');
+  background-size: cover;
+}
+
+.snowy {
+  background: url('./assets/bgs/sm-snowy.jpg');
+  background-size: cover;
+}
+
+.misty {
+  background: url('./assets/bgs/sm-misty.jpeg');
+  background-size: cover;
+}
+
+.thunder {
+  background: url('./assets/bgs/sm-thunder.jpg');
+  background-size: cover;
+}
+
+@media only screen and (min-device-width: 1024px) {
+  .bg {
+    background-image: url('./assets/bgs/bg-anime.jpg');
+  }
+}
+
+@media only screen and (min-device-width: 1024px) {
+  .cloudy {
+    background-image: url('./assets/bgs/cloudy.jpeg');
+  }
+}
+
+@media only screen and (min-device-width: 1024px) {
+  .rainy {
+    background-image: url('./assets/bgs/rainy.webp');
+  }
+}
+
+@media only screen and (min-device-width: 1024px) {
+  .sunny {
+    background-image: url('./assets/bgs/sunny.jpg');
+  }
+}
+
+@media only screen and (min-device-width: 1024px) {
+  .snowy {
+    background-image: url('./assets/bgs/snowy.jpg');
+  }
+}
+
+@media only screen and (min-device-width: 1024px) {
+  .misty {
+    background-image: url('./assets/bgs/misty.jpeg');
+  }
+}
+
+@media only screen and (min-device-width: 1024px) {
+  .thunder {
+    background-image: url('./assets/bgs/thunder.jpg');
+  }
+}
