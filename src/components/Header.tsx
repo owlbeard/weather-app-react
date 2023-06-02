@@ -25,7 +25,7 @@ export default function Header({ setQ, setD }: HeaderProps) {
         { mode: 'cors' }
       );
       const weatherData = await response.json();
-      const conduit = weatherData.current.condition.text;
+      const condition = weatherData.current.condition.text;
       const item = {
         name: '',
         temp: '',
@@ -34,26 +34,26 @@ export default function Header({ setQ, setD }: HeaderProps) {
         wind: '',
       };
       item.name = weatherData.location.name;
-      item.temp = `${weatherData.current.temp_c}° ${conduit}`;
+      item.temp = `${weatherData.current.temp_c}° ${condition}`;
       item.feels = `Feels: ${weatherData.current.feelslike_c}°`;
       item.humidity = `Humidity: ${weatherData.current.humidity}`;
       item.wind = `Wind: ${weatherData.current.wind_kph} km/h`;
       setD(item);
       setQ(true);
-      if (conduit.includes('loud') || conduit.includes('cast')) {
+      if (condition.includes('loud') || condition.includes('cast')) {
         body!.className = 'cloudy';
       } else if (
-        (conduit.includes('ain') && !conduit.includes('hunder')) ||
-        conduit.includes('izzle')
+        (condition.includes('ain') && !condition.includes('hunder')) ||
+        condition.includes('izzle')
       ) {
         body!.className = 'rainy';
-      } else if (conduit.includes('unny') || conduit.includes('lear')) {
+      } else if (condition.includes('unny') || condition.includes('lear')) {
         body!.className = 'sunny';
-      } else if (conduit.includes('now')) {
+      } else if (condition.includes('now')) {
         body!.className = 'snowy';
-      } else if (conduit.includes('ist')) {
+      } else if (condition.includes('ist')) {
         body!.className = 'misty';
-      } else if (conduit.includes('hunder')) {
+      } else if (condition.includes('hunder')) {
         body!.className = 'thunder';
       } else {
         body!.className = 'default';
@@ -63,21 +63,17 @@ export default function Header({ setQ, setD }: HeaderProps) {
     }
   };
   return (
-    <div className="container text-center flex flex-col sm:justify-between items-center bg-opacity-70">
-      <div className="container flex flex-row items-center justify-start-start">
+    <div className=" bg-chan text-center flex flex-col items-center">
+      <div className=" flex items-center justify-start w-full">
         <img className="h-16" src={Logo} alt="Earth-chan" />
         <div>
-          <h1 className="container text-xl sm:text-2xl">
-            Earth-chan(アースちゃん)
-          </h1>
-          <p className="container text-xs sm:text-lg">
-            A Weather App for Cuties!
-          </p>
+          <h1 className=" text-xl sm:text-2xl">Earth-chan(アースちゃん)</h1>
+          <p className="text-xs sm:text-lg">A Weather App for Cuties!</p>
         </div>
       </div>
-      <div className="container p-2 flex flex-grow sm:justify-center sm:max-w-4xl justify-start items-center gap-2">
+      <div className="p-2 flex flex-grow w-full sm:w-3/5 justify-center items-center gap-2">
         <form
-          className="flex flex-grow sm:justify-center sm:max-w-4xl justify-start items-center gap-2"
+          className="flex flex-grow justify-center items-center gap-2"
           action=""
           onChange={(e: React.SyntheticEvent) => {
             const element = e.target as HTMLInputElement;
@@ -91,7 +87,7 @@ export default function Header({ setQ, setD }: HeaderProps) {
         >
           <label htmlFor="search">City:</label>
           <input
-            className="container text-black flex-grow"
+            className=" text-black flex-grow"
             type="search"
             name="search"
             id="search"

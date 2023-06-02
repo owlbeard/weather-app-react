@@ -13,7 +13,7 @@ function App() {
     wind: '',
   });
   return (
-    <div className="container h-screen flex flex-col">
+    <div className="h-screen flex flex-col">
       <Header setQ={setQuery} setD={setData} />
       <Weather stateQ={query} stateD={data} />
       <Footer />
