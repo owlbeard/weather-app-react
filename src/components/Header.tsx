@@ -63,15 +63,15 @@ export default function Header({ setQ, setD }: HeaderProps) {
     }
   };
   return (
-    <div className=" bg-chan text-center flex flex-col items-center">
-      <div className=" flex items-center justify-start w-full">
+<div className=" bg-chan text-center flex flex-col w-full sm:w-auto sm:flex-row items-center sm:gap-12">
+      <div className=" flex items-center justify-start">
         <img className="h-16" src={Logo} alt="Earth-chan" />
         <div>
           <h1 className=" text-xl sm:text-2xl">Earth-chan(アースちゃん)</h1>
           <p className="text-xs sm:text-lg">A Weather App for Cuties!</p>
         </div>
       </div>
-      <div className="p-2 flex flex-grow w-full sm:w-3/5 justify-center items-center gap-2">
+      <div className="p-2 flex flex-grow w-full sm:max-w-5xl justify-center items-center gap-2">
         <form
           className="flex flex-grow justify-center items-center gap-2"
           action=""
@@ -87,7 +87,7 @@ export default function Header({ setQ, setD }: HeaderProps) {
         >
           <label htmlFor="search">City:</label>
           <input
-            className=" text-black flex-grow"
+            className=" text-black flex-grow sm:p-2 p-1 rounded-lg"
             type="search"
             name="search"
             id="search"
